@@ -10,6 +10,12 @@
     --col-dark: #1B2430;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+  }
+
 .container {
     width: min(100% - 30px, 1080px);
     margin-inline: auto;
@@ -28,4 +34,44 @@
 
 body {
     background-color: var(--col-dark);
+}
+
+.box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.currentTime, .alarmSetTime {
+    color: var(--col-white);
+}
+
+.currentTime {
+    font-size: 100px;
+}
+
+.alarmSetTime{
+    font-size: 27px;
+}
+
+.inpText {
+    width: 100px;
+    height: 40px;
+    background: var(--col-dark);
+    border-radius: 8px;
+    border: 1px solid var(--col-main-blue);
+}
+
+.setTime {
+    width: 100px;
+    height: 40px;
+    background: var(--col-main-blue);
+    border-radius: 8px;
+    border: 1px solid var(--col-main-blue);
+    color: var(--col-white);
+    font-size: 14px
+}
+
+.setTime:hover {
+    background-color: var(--col-main-blue-hover);
 }
