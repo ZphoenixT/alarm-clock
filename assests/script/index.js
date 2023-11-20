@@ -13,6 +13,8 @@ updateTime;
 document.addEventListener('DOMContentLoaded', function() {
     const hourInput = document.querySelector('.hours');
     const minuteInput = document.querySelector('.minutes');
+    const setTimeButton = document.querySelector('.setTime');
+    const alarmSetTime = document.querySelector('.alarmSetTime');
   
     // Function to validate input value between 0 and 24 for hours and 0 and 59 for minutes
     function validateInput(input, max) {
@@ -30,4 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
     minuteInput.addEventListener('input', function() {
       validateInput(this, 59);
     });
+  
+    // Event listener for setting the time
+    setTimeButton.addEventListener('click', function() {
+      const hours = hourInput.value.padStart(2, '0');
+      const minutes = minuteInput.value.padStart(2, '0');
+      alarmSetTime.textContent = `${hours}:${minutes}`;
+  
+      // Clear input fields after setting time
+      hourInput.value = '';
+      minuteInput.value = '';
+    });
   });
+  
