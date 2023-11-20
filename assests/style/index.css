@@ -60,6 +60,9 @@ body {
     background: var(--col-dark);
     border-radius: 8px;
     border: 1px solid var(--col-main-blue);
+    color: var(--col-white);
+    text-align: center;
+    font-size: 17px;
 }
 
 .setTime {

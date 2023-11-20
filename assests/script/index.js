@@ -1,10 +1,10 @@
 'use strict';
 
 function updateTime() {
-    const timeNow = new Date().toLocaleTimeString().substring(0, 4);
-    const time = document.querySelector(".currentTime"); 
+    const timeNow = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+    const time = document.querySelector(".currentTime");
     time.textContent = `${timeNow}`;
-}
+  }
 
 setInterval(updateTime, 100);
 updateTime;
