@@ -9,12 +9,25 @@ function updateTime() {
 setInterval(updateTime, 100);
 updateTime;
 
-function setAlarm() {
-    const hoursInput = document.querySelector(".inpText.hours").value;
-    const minutesInput = document.querySelector(".inpText.minutes").value;
-  
-    const alarmSetTimeElement = document.querySelector(".alarmSetTime");
-    alarmSetTimeElement.textContent = `${hoursInput.padStart(2, '0')}:${minutesInput.padStart(2, '0')}`;
-  }
 
-  document.querySelector(".setTime").addEventListener("click", setAlarm);
+document.addEventListener('DOMContentLoaded', function() {
+    const hourInput = document.querySelector('.hours');
+    const minuteInput = document.querySelector('.minutes');
+  
+    // Function to validate input value between 0 and 24 for hours and 0 and 59 for minutes
+    function validateInput(input, max) {
+      const value = parseInt(input.value, 10);
+      if (isNaN(value) || value < 0 || value > max) {
+        input.value = ''; // Clear the input if it doesn't meet the criteria
+      }
+    }
+  
+    // Event listeners for input validation
+    hourInput.addEventListener('input', function() {
+      validateInput(this, 24);
+    });
+  
+    minuteInput.addEventListener('input', function() {
+      validateInput(this, 59);
+    });
+  });
