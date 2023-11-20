@@ -40,6 +40,7 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
+    margin-top: 300px;
 }
 
 .currentTime, .alarmSetTime {
@@ -48,10 +49,12 @@ body {
 
 .currentTime {
     font-size: 100px;
+    text-align: center;
 }
 
 .alarmSetTime{
     font-size: 27px;
+    text-align: center;
 }
 
 .inpText {
@@ -74,7 +77,6 @@ body {
     color: var(--col-white);
     font-size: 14px
 }
-
 .setTime:hover {
     background-color: var(--col-main-blue-hover);
 }
